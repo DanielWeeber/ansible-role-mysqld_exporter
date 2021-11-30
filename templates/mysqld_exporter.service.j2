@@ -1,0 +1,10 @@
+[Unit]
+Description=MysqldExporter
+
+[Service]
+TimeoutStartSec=0
+User=mysqld_exporter
+ExecStart={{ mysqld_exporter_bin_path }} {{ mysqld_exporter_options }}
+
+[Install]
+WantedBy=multi-user.target
