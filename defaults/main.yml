@@ -3,10 +3,8 @@
 mysqld_exporter_version: '0.13.0'
 mysqld_exporter_arch: 'amd64'
 mysqld_exporter_download_url: https://github.com/prometheus/mysqld_exporter/releases/download/v{{ mysqld_exporter_version }}/mysqld_exporter-{{ mysqld_exporter_version }}.linux-{{ mysqld_exporter_arch }}.tar.gz
-
+mysqld_exporter_config_path: /etc/prometheus_mysqld.cnf
 mysqld_exporter_bin_path: /usr/local/bin/mysqld_exporter
-
-mysqld_exporter_options: ''
-
-mysqld_exporter_state: started
+mysqld_exporter_options: '--config.my-cnf={{ mysqld_exporter_config_path }}'
+mysqld_exporter_state: restarted
 mysqld_exporter_enabled: true
